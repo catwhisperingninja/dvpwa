@@ -5,12 +5,13 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   scan:
-    name: 'Checkmarx AST CLI Action'
-    - uses: checkmarx/ast-github-action@main #Github Action version
-      with:
-        base_uri: https://ast.checkmarx.net/
+    runs-on: ubuntu-latest
+    steps:
+    - uses: checkmarx/ast-github-action@main
+    - name: Checkmarx Scan
+      with: 
+        base_url: https://ast.checkmarx.net/
         cx_tenant: nfr_tevora
-        cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-        cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}   
+        cx_client_id: ${{ secrets.CX_CLIENT_ID}}
+        cx_client_secret: ${{ secrets.CX_CLIENT_SECRET}}

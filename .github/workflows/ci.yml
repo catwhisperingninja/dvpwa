@@ -11,7 +11,7 @@ jobs:
     - uses: checkmarx/ast-github-action@main
       name: Checkmarx Scan
       with: 
-        base_url: https://ast.checkmarx.net/
+        base_uri: https://ast.checkmarx.net/
         cx_tenant: nfr_tevora
         cx_client_id: ${{ secrets.CX_CLIENT_ID}}
         cx_client_secret: ${{ secrets.CX_CLIENT_SECRET}}

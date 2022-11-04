@@ -1,7 +1,13 @@
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
 - name: Checkmarx AST CLI Action
   uses: checkmarx/ast-github-action@main #Github Action version
    with:
     base_uri: https://ast.checkmarx.net/
-    cx_tenant: your_tenant
+    cx_tenant: nfr_tevora
     cx_client_id: ${{ secrets.CX_CLIENT_ID }}
     cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}   
